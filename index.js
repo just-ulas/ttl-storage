@@ -88,6 +88,14 @@ class Storage {
     });
     return result;
   }
+
+  /**
+   * Number of non-expired keys currently stored under this prefix.
+   * @returns {number}
+   */
+  get size() {
+    return this.keys().length;
+  }
 }
 
 export default Storage;
