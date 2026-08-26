@@ -27,6 +27,10 @@ class Storage {
     }
   }
 
+  has(key) {
+    return this.get(key) !== null;
+  }
+
   remove(key) {
     localStorage.removeItem(this.prefix + key);
   }
@@ -37,6 +41,18 @@ class Storage {
         localStorage.removeItem(key);
       }
     });
+  }
+
+  keys() {
+    const result = [];
+    Object.keys(localStorage).forEach((fullKey) => {
+      if (!fullKey.startsWith(this.prefix)) return;
+      const key = fullKey.slice(this.prefix.length);
+      if (this.get(key) !== null) {
+        result.push(key);
+      }
+    });
+    return result;
   }
 }
 
