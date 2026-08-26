@@ -25,19 +25,29 @@ store.set('token', 'abc123', 60);
 // Get it back
 console.log(store.get('token')); // 'abc123'
 
+// Check existence
+console.log(store.has('token')); // true
+
+// List keys
+console.log(store.keys()); // ['token']
+
+// How many active keys?
+console.log(store.size); // 1
+
 // After 60 seconds it returns null and cleans itself up
 ```
 
 ## API
 
-| Method | Description |
-|--------|-------------|
+| Method / Property | Description |
+|-------------------|-------------|
 | `set(key, value, ttl?)` | Store a value. `ttl` is in seconds. Omit for no expiry. |
 | `get(key)` | Retrieve a value. Returns `null` if missing or expired. |
+| `has(key)` | Check if a key exists and is not expired. |
 | `remove(key)` | Delete a key. |
 | `clear()` | Remove all keys that belong to this prefix. |
-| `has(key)` | Check if a key exists and is not expired. |
 | `keys()` | List all non-expired keys for this prefix. |
+| `size` | Number of non-expired keys under this prefix. |
 
 ## Why?
 
