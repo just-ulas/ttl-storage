@@ -1,0 +1,10 @@
+{
+  "name": "ttl-storage",
+  "version": "1.0.0",
+  "description": "A simple localStorage wrapper with TTL (time-to-live) support",
+  "main": "index.js",
+  "type": "module",
+  "keywords": ["localstorage", "ttl", "storage", "expiry", "browser"],
+  "author": "just-ulas",
+  "license": "MIT"
+}
